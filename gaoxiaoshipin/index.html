@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="搞笑视频 - 汇集全网热门爆笑短剧、整蛊挑战、搞笑段子与神回复，为您带来全天候的快乐源泉。">
+    <meta name="keywords" content="搞笑视频, 爆笑短剧, 搞笑段子, 整蛊视频, 热门搞笑">
+    <title>搞笑视频 - 热门爆笑短剧与神回复快乐源泉</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #ffa502;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 4px 12px;
+            align-items: center;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 4px;
+            width: 200px;
+        }
+
+        .search-bar button {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg) var(--spacing-lg);
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        /* Video Grid */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 20px;
+            background: var(--primary-color);
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .thumbnail {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #ddd;
+        }
+
+        .thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .duration-badge {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 71, 87, 0.9);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .video-card:hover .play-icon {
+            opacity: 1;
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .author-avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #eee;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: var(--spacing-md);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .rank-list {
+            counter-reset: rank;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-item::before {
+            counter-increment: rank;
+            content: counter(rank);
+            width: 24px;
+            height: 24px;
+            background: #eee;
+            color: #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .rank-item:nth-child(1)::before { background: #ff4757; color: white; }
+        .rank-item:nth-child(2)::before { background: #ffa502; color: white; }
+        .rank-item:nth-child(3)::before { background: #747d8c; color: white; }
+
+        .rank-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .rank-info p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f1f2f6;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            transition: background 0.2s;
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Loading Spinner */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: #dfe4ea;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #a4b0be;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #57606f;
+            font-size: 0.85rem;
+            color: #747d8c;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simple hiding for mobile */
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 16a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                搞笑<span>视频</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页推荐</a>
+                <a href="#">爆笑短剧</a>
+                <a href="#">整蛊挑战</a>
+                <a href="#">神回复</a>
+                <a href="#">萌宠时刻</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索搞笑视频...">
+                <button aria-label="搜索">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>笑口常开，快乐常在</h1>
+        <p>这里汇聚了全网最真实的搞笑瞬间、高智商整蛊和暖心反转。无论生活多忙碌，进来放松一分钟。</p>
+    </section>
+
+    <div class="container">
+        <!-- Main Content -->
+        <main>
+            <div class="section-title">
+                <span>今日热门</span>
+                <a href="#" style="font-size: 0.9rem; color: var(--primary-color);">查看更多 &rarr;</a>
+            </div>
+            
+            <div class="video-grid">
+                <!-- Video Item 1 -->
+                <article class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://picsum.photos/seed/laugh1/400/225" alt="搞笑视频缩略图">
+                        <div class="duration-badge">03:45</div>
+                        <div class="play-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">当猫咪第一次看到镜子里的自己，反应笑翻全场</h3>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                <span>萌宠大本营</span>
+                            </span>
+                            <span>2.3万次观看</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Item 2 -->
+                <article class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://picsum.photos/seed/laugh2/400/225" alt="搞笑视频缩略图">
+                        <div class="duration-badge">05:12</div>
+                        <div class="play-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">神回复系列：面试官问“你最大的缺点是什么？”</h3>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                <span>段子手联盟</span>
+                            </span>
+                            <span>8.5万次观看</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Item 3 -->
+                <article class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://picsum.photos/seed/laugh3/400/225" alt="搞笑视频缩略图">
+                        <div class="duration-badge">01:58</div>
+                        <div class="play-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">整蛊室友：在他睡着时给他化个“大花脸”</h3>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                <span>生活整蛊社</span>
+                            </span>
+                            <span>15.2万次观看</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Item 4 -->
+                <article class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://picsum.photos/seed/laugh4/400/225" alt="搞笑视频缩略图">
+                        <div class="duration-badge">04:20</div>
+                        <div class="play-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">爸爸带娃系列：新手的崩溃瞬间，笑到肚子疼</h3>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                <span>爸爸去哪儿</span>
+                            </span>
+                            <span>5.6万次观看</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Item 5 -->
+                <article class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://picsum.photos/seed/laugh5/400/225" alt="搞笑视频缩略图">
+                        <div class="duration-badge">02:15</div>
+                        <div class="play-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">街头采访：如果给你一百万，你愿意立刻消失吗？</h3>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                <span>街头趣闻</span>
+                            </span>
+                            <span>10.1万次观看</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Item 6 -->
+                <article class="video-card">
+                    <div class="thumbnail">
+                        <img src="https://picsum.photos/seed/laugh6/400/225" alt="搞笑视频缩略图">
+                        <div class="duration-badge">03:05</div>
+                        <div class="play-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">健身教练的“魔鬼”训练，学员当场笑倒</h3>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                <span>健身房风云</span>
+                            </span>
+                            <span>3.4万次观看</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="loading">
+                <p>正在加载更多精彩内容...</p>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Category Tags -->
+            <div class="sidebar-card">
+                <h3 style="margin-bottom: 12px; font-size: 1rem;">热门分类</h3>
+                <div class="tags-container">
+                    <a href="#" class="tag">萌宠</a>
+                    <a href="#" class="tag">整蛊</a>
+                    <a href="#" class="tag">短剧</a>
+                    <a href="#" class="tag">神回复</a>
+                    <a href="#" class="tag">职场</a>
+                    <a href="#" class="tag">生活</a>
+                    <a href="#" class="tag">家庭</a>
+                    <a href="#" class="tag">校园</a>
+                </div>
+            </div>
+
+            <!-- Ranking List -->
+            <div class="sidebar-card">
+                <h3 style="margin-bottom: 12px; font-size: 1rem;">本周热门榜</h3>
+                <div class="rank-list">
+                    <a href="#" class="rank-item">
+                        <div class="rank-info">
+                            <h4>这届网友的脑洞，简直是天才！</h4>
+                            <p>生活 · 120万播放</p>
+                        </div>
+                    </a>
+                    <a href="#" class="rank-item">
+                        <div class="rank-info">
+                            <h4>猫咪掉进水盆后的反应</h4>
+                            <p>萌宠 · 98万播放</p>
+                        </div>
+                    </a>
+                    <a href="#" class="rank-item">
+                        <div class="rank-info">
+                            <h4>老板开会时的神表情</h4>
+                            <p>职场 · 85万播放</p>
+                        </div>
+                    </a>
+                    <a href="#" class="rank-item">
+                        <div class="rank-info">
+                            <h4>整蛊闺蜜吃柠檬</h4>
+                            <p>整蛊 · 72万播放</p>
+                        </div>
+                    </a>
+                    <a href="#" class="rank-item">
+                        <div class="rank-info">
+                            <h4>健身失败的瞬间</h4>
+                            <p>搞笑 · 65万播放</p>
+                        </div>
+                    </a>
+                </div>
+                <a href="#" style="display: block; text-align: center; margin-top: 10px; font-size: 0.9rem; color: var(--primary-color);">查看完整榜单</a>
+            </div>
+
+            <!-- Ad Placeholder -->
+            <div class="sidebar-card" style="background: linear-gradient(to right, #ff9f43, #ff6b6b); color: white; text-align: center; padding: 20px;">
+                <h4 style="margin-bottom: 8px;">加入会员</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 12px;">解锁无广告高清观看</p>
+                <button style="background: white; color: #ff6b6b; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; cursor: pointer;">立即开通</button>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于搞笑视频</h4>
+                <p style="font-size: 0.9rem; line-height: 1.8; color: #a4b0be;">
+                    我们致力于为用户提供最纯粹、最优质的搞笑内容。无论是萌宠趣事、生活整蛊还是神回复段子，这里都能满足您的娱乐需求。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门标签</h4>
+                <div class="tags-container" style="margin-top: 10px;">
+                    <a href="#" class="tag" style="background: rgba(255,255,255,0.1);">短视频</a>
+                    <a href="#" class="tag" style="background: rgba(255,255,255,0.1);">爆笑</a>
+                    <a href="#" class="tag" style="background: rgba(255,255,255,0.1);">段子</a>
+                    <a href="#" class="tag" style="background: rgba(255,255,255,0.1);">整蛊</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 搞笑视频网 版权所有 | 本站内容仅供娱乐参考
+        </div>
+    </footer>
+
+</body>
+              </html>
