@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国产VA免费精品高清在线 - 沉浸式语音体验与资源导航</title>
+    <meta name="description" content="国产VA免费精品高清在线平台，提供海量高音质配音作品、虚拟主播资源及音频下载指南。包含声优档案、作品分类、播放器设置及常见问题解答。">
+    <meta name="keywords" content="国产VA,免费,精品,高清,在线,语音,配音,声优,虚拟主播,音频">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2d2d44;
+            --text-main: #ffffff;
+            --text-sub: #b2bec3;
+            --border-radius: 12px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(30, 30, 46, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            -webkit-text-fill-color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-sub);
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--text-main);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 15px 8px 35px;
+            border-radius: 20px;
+            color: var(--text-main);
+            outline: none;
+            width: 200px;
+            transition: width 0.3s, border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            width: 260px;
+            border-color: var(--primary-color);
+        }
+
+        .search-box::before {
+            content: '🔍';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+            opacity: 0.5;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(108, 92, 231, 0.15) 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Audio Card */
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 12px;
+        }
+
+        .audio-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .audio-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .audio-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .card-thumb {
+            width: 80px;
+            height: 80px;
+            background: #3d3d5c;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .card-info {
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-end;
+        }
+
+        .btn-play {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-play:hover {
+            background: var(--accent-color);
+        }
+
+        .btn-play svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .audio-wave {
+            width: 60px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .bar {
+            width: 3px;
+            background: var(--text-sub);
+            border-radius: 2px;
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .bar:nth-child(2) { animation-delay: 0.1s; }
+        .bar:nth-child(3) { animation-delay: 0.2s; }
+        .bar:nth-child(4) { animation-delay: 0.3s; }
+
+        @keyframes wave {
+            0%, 100% { height: 5px; }
+            50% { height: 15px; }
+        }
+
+        .playing .bar {
+            background: var(--accent-color);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .count {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+        }
+
+        .rank-list {
+            counter-reset: rank;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .rank-item::before {
+            counter-increment: rank;
+            content: counter(rank);
+            width: 24px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .rank-item:nth-child(1)::before { background: #ff7675; }
+        .rank-item:nth-child(2)::before { background: #fab1a0; }
+        .rank-item:nth-child(3)::before { background: #ffeaa7; }
+
+        .rank-name {
+            font-size: 0.95rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 140px;
+        }
+
+        /* Player Bar */
+        .player-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(30, 30, 46, 0.98);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 0;
+            z-index: 2000;
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+        }
+
+        .player-bar.visible {
+            transform: translateY(0);
+        }
+
+        .player-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .player-thumb {
+            width: 50px;
+            height: 50px;
+            background: #3d3d5c;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .player-info {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        .player-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .player-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .ctrl-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        .ctrl-btn:hover { opacity: 1; }
+
+        .progress-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--accent-color);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            display: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .player-bar {
+                padding: 10px 0;
+            }
+
+            .player-content {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>🎙️</span> 声浪精选
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">情感电台</a></li>
+                    <li><a href="#">游戏配音</a></li>
+                    <li><a href="#">广播剧</a></li>
+                    <li><a href="#">声优访谈</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索 VA 作品...">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>国产VA免费精品高清在线</h1>
+            <p>汇集全网热门国产配音演员作品，提供无损音质播放与下载指南。探索声音的魅力，发现属于你的听觉盛宴。</p>
+            <div class="hero-tags">
+                <span class="tag"># 情感治愈</span>
+                <span class="tag"># 游戏解说</span>
+                <span class="tag"># 热门广播剧</span>
+                <span class="tag"># 虚拟主播</span>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <!-- Main Content -->
+            <div class="main-content">
+                <h2 class="section-title">🔥 热门推荐</h2>
+                
+                <div class="audio-list">
+                    <!-- Audio Item 1 -->
+                    <article class="audio-card" onclick="playAudio(this, '《星河入梦》- 治愈系晚安电台', '声优小A', '14:20', 'https://picsum.photos/seed/voice1/80/80')">
+                        <img src="https://picsum.photos/seed/voice1/80/80" alt="Cover" class="card-thumb">
+                        <div class="card-info">
+                            <h3 class="card-title">《星河入梦》- 治愈系晚安电台</h3>
+                            <div class="card-meta">
+                                <span>声优小A</span>
+                                <span>14:20</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-play">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div class="audio-wave"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                        </div>
+                    </article>
+
+                    <!-- Audio Item 2 -->
+                    <article class="audio-card" onclick="playAudio(this, '《末世求生》- 游戏高燃解说', '老王配音', '32:15', 'https://picsum.photos/seed/voice2/80/80')">
+                        <img src="https://picsum.photos/seed/voice2/80/80" alt="Cover" class="card-thumb">
+                        <div class="card-info">
+                            <h3 class="card-title">《末世求生》- 游戏高燃解说</h3>
+                            <div class="card-meta">
+                                <span>老王配音</span>
+                                <span>32:15</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-play">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div class="audio-wave"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                        </div>
+                    </article>
+
+                    <!-- Audio Item 3 -->
+                    <article class="audio-card" onclick="playAudio(this, '《君临天下》- 历史广播剧片段', '御用旁白', '08:45', 'https://picsum.photos/seed/voice3/80/80')">
+                        <img src="https://picsum.photos/seed/voice3/80/80" alt="Cover" class="card-thumb">
+                        <div class="card-info">
+                            <h3 class="card-title">《君临天下》- 历史广播剧片段</h3>
+                            <div class="card-meta">
+                                <span>御用旁白</span>
+                                <span>08:45</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-play">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div class="audio-wave"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                        </div>
+                    </article>
+
+                    <!-- Audio Item 4 -->
+                    <article class="audio-card" onclick="playAudio(this, '《都市传说》- 悬疑FM', '夜猫子', '22:10', 'https://picsum.photos/seed/voice4/80/80')">
+                        <img src="https://picsum.photos/seed/voice4/80/80" alt="Cover" class="card-thumb">
+                        <div class="card-info">
+                            <h3 class="card-title">《都市传说》- 悬疑FM</h3>
+                            <div class="card-meta">
+                                <span>夜猫子</span>
+                                <span>22:10</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-play">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div class="audio-wave"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                        </div>
+                    </article>
+
+                    <!-- Audio Item 5 -->
+                    <article class="audio-card" onclick="playAudio(this, '《二次元日常》- 轻松闲聊', '开心果', '18:05', 'https://picsum.photos/seed/voice5/80/80')">
+                        <img src="https://picsum.photos/seed/voice5/80/80" alt="Cover" class="card-thumb">
+                        <div class="card-info">
+                            <h3 class="card-title">《二次元日常》- 轻松闲聊</h3>
+                            <div class="card-meta">
+                                <span>开心果</span>
+                                <span>18:05</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-play">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <div class="audio-wave"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="faq-section">
+                    <h2 class="section-title">常见问题 (FAQ)</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">如何收听更高音质的音频？</div>
+                        <div class="faq-answer">本站支持在线播放。若需无损音质，请点击播放器右侧的下载按钮，或查看作品详情页的下载说明。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">支持哪些设备在线播放？</div>
+                        <div class="faq-answer">本站页面适配电脑、平板及智能手机。请确保设备连接网络即可流畅播放。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">这些配音作品属于什么版权类型？</div>
+                        <div class="faq-answer">所有展示作品均为用户上传或合作授权内容，仅供个人学习与试听使用，请勿用于商业用途。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="sidebar-card">
+                    <h3 class="section-title" style="font-size: 1.1rem; border: none; padding: 0;">分类浏览</h3>
+                    <ul class="category-list">
+                        <li><a href="#">情感治愈 <span class="count">1.2k</span></a></li>
+                        <li><a href="#">游戏解说 <span class="count">850</span></a></li>
+                        <li><a href="#">有声小说 <span class="count">2.3k</span></a></li>
+                        <li><a href="#">相声评书 <span class="count">320</span></a></li>
+                        <li><a href="#">外语听力 <span class="count">190</span></a></li>
+                        <li><a href="#">广播剧 <span class="count">560</span></a></li>
+                        <li><a href="#">ASMR <span class="count">410</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3 class="section-title" style="font-size: 1.1rem; border: none; padding: 0;">热门声优榜</h3>
+                    <div class="rank-list">
+                        <div class="rank-item">
+                            <span class="rank-name">薄荷味的夏天</span>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-name">阿宅在线</span>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-name">深夜食堂</span>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-name">电波系少女</span>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-name">老K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-card" style="text-align: center; padding: 30px 20px;">
+                    <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 15px;">关注我们获取最新资源</p>
+                    <button style="background: var(--primary-color); border: none; color: white; padding: 10px 20px; border-radius: 20px; cursor: pointer; width: 100%;">加入社群</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Audio Player Bar -->
+    <div class="player-bar" id="playerBar">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="container player-content">
+            <img src="" alt="Thumb" class="player-thumb" id="playerThumb">
+            <div class="player-info">
+                <div class="player-title" id="playerTitle">选择一首音频开始播放</div>
+                <div style="font-size: 0.8rem; color: var(--text-sub);" id="playerMeta">--</div>
+            </div>
+            <div class="player-controls">
+                <button class="ctrl-btn" onclick="togglePlay()">⏯</button>
+                <button class="ctrl-btn">🔊</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isPlaying = false;
+        let timer = null;
+        let progress = 0;
+
+        function playAudio(element, title, author, duration, thumb) {
+            // Update UI
+            document.getElementById('playerBar').classList.add('visible');
+            document.getElementById('playerTitle').textContent = title;
+            document.getElementById('playerMeta').textContent = `声优：${author} | 时长：${duration}`;
+            document.getElementById('playerThumb').src = thumb;
+
+            // Reset progress
+            progress = 0;
+            document.getElementById('progressBar').style.width = '0%';
+            
+            // Visual feedback on list
+            document.querySelectorAll('.audio-card').forEach(card => {
+                card.classList.remove('active');
+                const wave = card.querySelector('.audio-wave');
+                if(wave) wave.classList.remove('playing');
+            });
+            element.classList.add('active');
+            element.querySelector('.audio-wave').classList.add('playing');
+
+            // Start playback simulation
+            isPlaying = true;
+            startProgress();
+        }
+
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            if(isPlaying) {
+                startProgress();
+            } else {
+                clearInterval(timer);
+            }
+        }
+
+        function startProgress() {
+            clearInterval(timer);
+            timer = setInterval(() => {
+                if(progress < 100) {
+                    progress += 0.5;
+                    document.getElementById('progressBar').style.width = progress + '%';
+                } else {
+                    isPlaying = false;
+                    clearInterval(timer);
+                }
+            }, 100);
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
