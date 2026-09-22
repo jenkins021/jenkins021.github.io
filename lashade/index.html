@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="拉沙德-刘易斯，NBA传奇球星，魔术队史得分王，两届总冠军得主。本站提供拉沙德·刘易斯职业生涯数据、高光集锦、技术分析及退役生活回顾。">
+    <meta name="keywords" content="拉沙德-刘易斯, 拉沙德刘易斯, 魔术队史得分王, NBA球员, 侧翼防守专家">
+    <title>拉沙德-刘易斯-NBA传奇侧翼与魔术队史得分王百科</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #005f73;
+            --secondary: #0a9396;
+            --accent: #ee9b00;
+            --bg-body: #f4f6f8;
+            --bg-card: #ffffff;
+            --text-main: #1d3557;
+            --text-light: #6c757d;
+            --border: #e9ecef;
+            --spacing: 20px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-card);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span { color: var(--accent); }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--secondary); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .hero-tags {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Section Styling */
+        section { margin-bottom: 50px; }
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        /* Profile Cards Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-item strong {
+            display: block;
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+        .stat-item span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Table Styling */
+        .table-wrapper {
+            overflow-x: auto;
+            background: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: #f8f9fa;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background-color: #fcfcfc; }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--border);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: #e0f7fa;
+            border-left: 5px solid var(--secondary);
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+        }
+        .quote-box p {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #004d40;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-main);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; height: auto; padding: 15px 0; gap: 15px; }
+            nav ul { gap: 15px; font-size: 0.9rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .section-title { flex-direction: column; align-items: flex-start; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">LW<span>百科</span></a>
+        <nav>
+            <ul>
+                <li><a href="#profile">职业生涯</a></li>
+                <li><a href="#stats">核心数据</a></li>
+                <li><a href="#career">生涯高光</a></li>
+                <li><a href="#analysis">技术分析</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="container">
+        <h1>拉沙德-刘易斯</h1>
+        <p>美国职业篮球运动员，司职小前锋。魔术队史得分王，两届NBA总冠军得主，以其精准的三分投射和顶级的防守能力著称。</p>
+        <div class="hero-tags">
+            <span class="tag">魔术队史得分王</span>
+            <span class="tag">两届总冠军</span>
+            <span class="tag">三分神射手</span>
+            <span class="tag">防守悍将</span>
+        </div>
+    </div>
+</div>
+
+<main class="container">
+
+    <!-- Profile Section -->
+    <section id="profile">
+        <h2 class="section-title">球员档案</h2>
+        <div class="grid-3">
+            <article class="card">
+                <h3>基本信息</h3>
+                <p style="margin-top: 15px; color: var(--text-light);">拉沙德·威廉·刘易斯出生于美国华盛顿特区。</p>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <strong>1992</strong>
+                        <span>选秀年份</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>20</strong>
+                        <span>职业生涯赛季</span>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <h3>主要荣誉</h3>
+                <ul style="margin-top: 15px; padding-left: 20px; color: var(--text-light);">
+                    <li>2次 NBA总冠军 (2012, 2013)</li>
+                    <li>1次全明星 (2003)</li>
+                    <li>1次最佳阵容二阵 (2003)</li>
+                    <li>魔术队史得分王 (18620分)</li>
+                </ul>
+            </article>
+            <article class="card">
+                <h3>位置与风格</h3>
+                <p style="margin-top: 15px; color: var(--text-light);">
+                    主要担任小前锋。职业生涯前期以劲爆的扣篮和运动能力著称，后期转型为顶级的底角三分射手。防守端拥有出色的臂展和横移速度，是联盟顶级的侧翼防守专家之一。
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats">
+        <h2 class="section-title">生涯核心数据统计 <a href="#">查看完整档案 &rarr;</a></h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>赛季</th>
+                        <th>球队</th>
+                        <th>场均得分</th>
+                        <th>篮板</th>
+                        <th>助攻</th>
+                        <th>三分命中率</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2007-08</td>
+                        <td>奥兰多魔术</td>
+                        <td>21.4</td>
+                        <td>6.7</td>
+                        <td>2.8</td>
+                        <td style="color: var(--secondary); font-weight: bold;">41.4%</td>
+                    </tr>
+                    <tr>
+                        <td>2009-10</td>
+                        <td>奥兰多魔术</td>
+                        <td>22.4</td>
+                        <td>7.4</td>
+                        <td>3.1</td>
+                        <td style="color: var(--secondary); font-weight: bold;">40.9%</td>
+                    </tr>
+                    <tr>
+                        <td>2012-13</td>
+                        <td>迈阿密热火</td>
+                        <td>12.6</td>
+                        <td>4.2</td>
+                        <td>1.7</td>
+                        <td style="color: var(--secondary); font-weight: bold;">38.9%</td>
+                    </tr>
+                    <tr>
+                        <td>职业生涯</td>
+                        <td>8支球队</td>
+                        <td>13.1</td>
+                        <td>4.5</td>
+                        <td>2.0</td>
+                        <td style="color: var(--secondary); font-weight: bold;">37.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Career Highlights -->
+    <section id="career">
+        <h2 class="section-title">生涯里程碑</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-year">1992年</span>
+                <p>以首轮第12顺位被西雅图超音速队选中，开启职业生涯。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">1995年</span>
+                <p>入选NBA最佳新秀阵容第二阵容，展现出惊人的运动天赋。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2000-01赛季</span>
+                <p>场均得分突破20分，并入选全明星阵容，确立球队核心地位。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2007年</span>
+                <p>被交易至奥兰多魔术队，与德怀特·霍华德组成“魔兽”组合。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2009年</span>
+                <p>带领魔术队打入NBA总决赛，虽然最终不敌湖人，但个人表现卓越。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2010年</span>
+                <p>以一份5年1.18亿美元的天价合同留在魔术队，成为联盟薪资最高的球员之一。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2012年</span>
+                <p>加盟迈阿密热火队，与詹姆斯、韦德组成三巨头，夺得职业生涯首座总冠军。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2015年</span>
+                <p>正式宣布退役，结束长达20年的职业生涯。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <div class="quote-box">
+        <p>“拉沙德·刘易斯是那种你愿意在季后赛中把球交给他出手的人。他的外线投射能力和防守意识，让他在场上始终具有极高的战术价值。”</p>
+        <p style="margin-top: 10px; font-size: 0.9rem; text-align: right;">—— NBA教练评价</p>
+    </div>
+
+    <!-- Analysis Section -->
+    <section id="analysis">
+        <h2 class="section-title">技术特点分析</h2>
+        <div class="grid-3">
+            <article class="card">
+                <h3>三分投射</h3>
+                <p>刘易斯是早期NBA最顶级的空间型四号位/五号位之一。即使在三分线距离大幅增加的规则下，他依然保持着极高的三分命中率，能够拉开空间，为内线核心创造进攻机会。</p>
+            </article>
+            <article class="card">
+                <h3>防守能力</h3>
+                <p>身高2米08，臂展惊人。虽然早期以进攻闻名，但他从未在防守端懈怠。凭借出色的横移速度和预判能力，他经常被安排防守对方最好的锋线球员，是联盟著名的“死亡缠绕”防守者。</p>
+            </article>
+            <article class="card">
+                <h3>高位策应</h3>
+                <p>随着年龄增长，刘易斯开发出了扎实的高位策应能力。他不仅能投篮，还能利用身高优势为队友传球，是战术体系中不可或缺的枢纽。</p>
+            </article>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">NBA百科</a>
+            <a href="#">球员数据库</a>
+            <a href="#">关于我们</a>
+        </div>
+        <p>&copy; 2023 NBA球员资料馆. 本站内容仅供学习交流使用，不用于商业用途。</p>
+        <p>数据来源：NBA官方网站及Basketball-Reference。</p>
+    </div>
+</footer>
+
+</body>
+  </html>
