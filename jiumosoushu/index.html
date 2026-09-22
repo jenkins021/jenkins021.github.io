@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="鸠摩搜书网页 - 专业电子书资源聚合与搜索平台，提供TXT、PDF、EPUB等格式书籍下载，涵盖小说、教材、技术文档、漫画等各类图书资源。">
+    <meta name="keywords" content="鸠摩搜书网页,电子书下载,在线搜书,免费电子书,TXT下载,PDF电子书,鸠摩">
+    <title>鸠摩搜书网页 - 专业电子书资源聚合与搜索平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-search {
+            background: var(--bg-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-search:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 24px auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Search Section */
+        .search-section {
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .search-title {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .search-desc {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .search-box-wrapper {
+            display: flex;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 20px;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 30px 0 0 30px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-color);
+        }
+
+        .search-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 32px;
+            border-radius: 0 30px 30px 0;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            background-color: #d35400;
+        }
+
+        .quick-tags {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f0f2f5;
+            color: var(--text-secondary);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: #e1e4e8;
+            color: var(--accent-color);
+        }
+
+        /* Filters */
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            background: #e9ecef;
+            padding: 4px;
+            border-radius: 8px;
+        }
+
+        .filter-tab {
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .filter-tab.active {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-weight: 600;
+        }
+
+        .sort-select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            background: var(--card-bg);
+            cursor: pointer;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .book-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid transparent;
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-color: rgba(230, 126, 34, 0.3);
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-info {
+            padding: 16px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .book-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .book-tags {
+            margin-bottom: 12px;
+        }
+
+        .book-tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 6px;
+            background-color: #f0f2f5;
+            color: #888;
+            border-radius: 3px;
+            margin-right: 4px;
+        }
+
+        .book-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-sm {
+            flex: 1;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 13px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-download {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-download:hover {
+            background-color: #34495e;
+        }
+
+        .btn-preview {
+            background-color: #ecf0f1;
+            color: var(--text-main);
+        }
+
+        .btn-preview:hover {
+            background-color: #bdc3c7;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            margin-top: 48px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .category-card:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .category-name {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                height: auto;
+                padding: 12px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .search-box-wrapper {
+                flex-direction: column;
+            }
+
+            .search-btn {
+                width: 100%;
+                border-radius: 8px;
+                padding: 12px;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-tabs {
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span>鸠摩</span>搜书
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">小说文学</a>
+                <a href="#">计算机技术</a>
+                <a href="#">经管励志</a>
+                <a href="#">历史传记</a>
+                <a href="#">漫画动漫</a>
+                <a href="#">教材课件</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-search" onclick="document.getElementById('searchInput').focus()">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    搜索
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Search Area -->
+        <section class="search-section">
+            <h1 class="search-title">海量电子书资源，一键直达</h1>
+            <p class="search-desc">支持 TXT、PDF、EPUB 等多种格式，聚合全网优质书籍资源</p>
+            
+            <form class="search-box-wrapper" onsubmit="event.preventDefault(); handleSearch();">
+                <input type="text" id="searchInput" class="search-input" placeholder="请输入书名、作者或ISBN..." autocomplete="off">
+                <button type="submit" class="search-btn">立即搜索</button>
+            </form>
+
+            <div class="quick-tags">
+                <span class="tag" onclick="setSearch('三体')">三体</span>
+                <span class="tag" onclick="setSearch('JavaScript')">JavaScript</span>
+                <span class="tag" onclick="setSearch('活着')">活着</span>
+                <span class="tag" onclick="setSearch('Python')">Python</span>
+                <span class="tag" onclick="setSearch('百年孤独')">百年孤独</span>
+                <span class="tag" onclick="setSearch('算法导论')">算法导论</span>
+            </div>
+        </section>
+
+        <!-- Content Area -->
+        <section>
+            <div class="filter-bar">
+                <div class="filter-tabs">
+                    <div class="filter-tab active">综合排序</div>
+                    <div class="filter-tab">最新发布</div>
+                    <div class="filter-tab">最热下载</div>
+                    <div class="filter-tab">TXT格式</div>
+                    <div class="filter-tab">PDF格式</div>
+                </div>
+                <select class="sort-select">
+                    <option>默认排序</option>
+                    <option>下载量升序</option>
+                    <option>下载量降序</option>
+                    <option>时间降序</option>
+                </select>
+            </div>
+
+            <div class="content-grid">
+                <!-- Book Card 1 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book1/300/400" alt="书籍封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">深入理解计算机系统：从程序员的角度看计算机运行原理</h3>
+                        <div class="book-meta">
+                            <span>计算机技术</span>
+                            <span>PDF</span>
+                        </div>
+                        <div class="book-tags">
+                            <span class="book-tag">电子书</span>
+                            <span class="book-tag">教材</span>
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn-sm btn-download">下载</button>
+                            <button class="btn-sm btn-preview">预览</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book Card 2 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book2/300/400" alt="书籍封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">活着：余华长篇小说经典</h3>
+                        <div class="book-meta">
+                            <span>小说文学</span>
+                            <span>TXT</span>
+                        </div>
+                        <div class="book-tags">
+                            <span class="book-tag">经典</span>
+                            <span class="book-tag">散文</span>
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn-sm btn-download">下载</button>
+                            <button class="btn-sm btn-preview">预览</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book Card 3 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book3/300/400" alt="书籍封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">JavaScript高级程序设计（第4版）</h3>
+                        <div class="book-meta">
+                            <span>编程语言</span>
+                            <span>PDF</span>
+                        </div>
+                        <div class="book-tags">
+                            <span class="book-tag">技术</span>
+                            <span class="book-tag">开发</span>
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn-sm btn-download">下载</button>
+                            <button class="btn-sm btn-preview">预览</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book Card 4 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book4/300/400" alt="书籍封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">百年孤独：魔幻现实主义文学巅峰之作</h3>
+                        <div class="book-meta">
+                            <span>外国文学</span>
+                            <span>EPUB</span>
+                        </div>
+                        <div class="book-tags">
+                            <span class="book-tag">名著</span>
+                            <span class="book-tag">小说</span>
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn-sm btn-download">下载</button>
+                            <button class="btn-sm btn-preview">预览</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book Card 5 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book5/300/400" alt="书籍封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Python编程：从入门到实践</h3>
+                        <div class="book-meta">
+                            <span>编程语言</span>
+                            <span>PDF</span>
+                        </div>
+                        <div class="book-tags">
+                            <span class="book-tag">入门</span>
+                            <span class="book-tag">实战</span>
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn-sm btn-download">下载</button>
+                            <button class="btn-sm btn-preview">预览</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Book Card 6 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book6/300/400" alt="书籍封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">三体全集：刘慈欣科幻经典</h3>
+                        <div class="book-meta">
+                            <span>科幻小说</span>
+                            <span>TXT</span>
+                        </div>
+                        <div class="book-tags">
+                            <span class="book-tag">科幻</span>
+                            <span class="book-tag">雨果奖</span>
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn-sm btn-download">下载</button>
+                            <button class="btn-sm btn-preview">预览</button>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- Book Card 7 -->
+                 <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book7/300/400" alt="书籍封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">算法导论（原书第3版）</h3>
+                        <div class="book-meta">
+                            <span>计算机</span>
+                            <span>PDF</span>
+                        </div>
+                        <div class="book-tags">
+                            <span class="book-tag">算法</span>
+                            <span class="book-tag">理论</span>
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn-sm btn-download">下载</button>
+                            <button class="btn-sm btn-preview">预览</button>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- Book Card 8 -->
+                 <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/book8/300/400" alt="书籍封面">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">明朝那些事儿：历史随笔集</h3>
+                        <div class="book-meta">
+                            <span>历史</span>
+                            <span>EPUB</span>
+                        </div>
+                        <div class="book-tags">
+                            <span class="book-tag">历史</span>
+                            <span class="book-tag">通俗</span>
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn-sm btn-download">下载</button>
+                            <button class="btn-sm btn-preview">预览</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories-section">
+            <div class="section-header">
+                <h2 class="section-title">热门分类</h2>
+                <a href="#" style="font-size: 14px; color: var(--accent-color);">查看更多 &rarr;</a>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <span class="category-icon">📚</span>
+                    <span class="category-name">小说文学</span>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">💻</span>
+                    <span class="category-name">计算机技术</span>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">📈</span>
+                    <span class="category-name">经管励志</span>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🎨</span>
+                    <span class="category-name">漫画动漫</span>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">📜</span>
+                    <span class="category-name">历史传记</span>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🎓</span>
+                    <span class="category-name">教材课件</span>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">👶</span>
+                    <span class="category-name">少儿读物</span>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">⚖️</span>
+                    <span class="category-name">法律</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于鸠摩搜书</h4>
+                <p style="font-size: 13px; line-height: 1.8;">
+                    鸠摩搜书是一个专注于电子书资源聚合与搜索的公益性平台。我们致力于为读者提供便捷、高效的书籍检索服务，收录了数百万份高质量的电子书资源。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">如何搜索书籍</a></li>
+                    <li><a href="#">常见格式介绍</a></li>
+                    <li><a href="#">下载失败怎么办</a></li>
+                    <li><a href="#">提交新书</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源声明</h4>
+                <p style="font-size: 13px; line-height: 1.8;">
+                    本站所有资源均来自互联网，版权归原作者所有。仅供学习交流使用，请于下载后24小时内删除。如有侵犯您的权益，请联系我们处理。
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 鸠摩搜书网页 - 专业的电子书搜索引擎. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple interaction for search and tags
+        function setSearch(term) {
+            const input = document.getElementById('searchInput');
+            input.value = term;
+            input.focus();
+            handleSearch();
+        }
+
+        function handleSearch() {
+            const input = document.getElementById('searchInput');
+            const term = input.value.trim();
+            if(term) {
+                // In a real app, this would redirect to search results
+                // For demo, we just alert (or could log to console)
+                console.log("Searching for: " + term);
+                // Simulate loading state
+                const btn = document.querySelector('.search-btn');
+                const originalText = btn.innerText;
+                btn.innerText = "搜索中...";
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    alert("正在跳转到搜索结果页面... (演示功能)");
+                }, 500);
+            }
+        }
+
+        // Filter tab interaction
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+                  </html>
