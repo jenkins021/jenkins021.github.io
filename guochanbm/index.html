@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="宝马X1国产版全面评测与购车指南，涵盖X1 sDrive25Li与xDrive25Li动力参数、内饰配置、空间表现及优惠价格。提供专业购车建议与参数对比。">
+    <meta name="keywords" content="国产bmwx1,宝马X1,宝马X1评测,宝马X1价格,宝马X1参数,宝马X1怎么样,宝马X1对比">
+    <title>国产bmwx1-宝马X1国产版深度评测与购车指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066b1;
+            --primary-dark: #004c8f;
+            --accent-color: #f0a500;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-light: #f4f6f8;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            color: white !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #e6f0fa;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .car-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .car-image {
+            width: 100%;
+            height: 220px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .car-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .car-info {
+            padding: 1.5rem;
+        }
+
+        .car-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .car-price {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .spec-list {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .spec-item strong {
+            color: var(--text-main);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid transparent;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Guide Section */
+        .guide-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .guide-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .guide-content p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .guide-sidebar {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .guide-sidebar h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #b0b0b0;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+            .section {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                </svg>
+                <span>汽车评测网</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#overview">车型概览</a>
+                <a href="#comparison">对比评测</a>
+                <a href="#features">核心亮点</a>
+                <a href="#guide">购车指南</a>
+                <a href="#faq" class="cta-button">预约试驾</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>国产bmwx1 - 空间与豪华的完美平衡</h1>
+                <p>深入解析宝马X1国产版（B48发动机、CLAR平台）的动态表现、内饰升级与市场竞争力，助您做出明智购车决策。</p>
+                <div class="hero-tags">
+                    <span class="tag">最新款 2024款</span>
+                    <span class="tag">SUV</span>
+                    <span class="tag">紧凑型豪华</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="comparison" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>主力车型对比</h2>
+                    <p>了解国产X1不同配置的差异，选择最适合您的版本。</p>
+                </div>
+                <div class="comparison-grid">
+                    <!-- Car 1 -->
+                    <article class="car-card">
+                        <div class="car-image">
+                            <span class="car-badge">推荐</span>
+                            <img src="https://picsum.photos/seed/bmw1sdrive/400/300" alt="宝马X1 sDrive25Li">
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">X1 sDrive25Li 领先型</h3>
+                            <div class="car-price">指导价: 约 28.89万起</div>
+                            <div class="spec-list">
+                                <div class="spec-item"><strong>动力总成</strong> 2.0T 涡轮增压 (184马力)</div>
+                                <div class="spec-item"><strong>驱动方式</strong> 前置后驱</div>
+                                <div class="spec-item"><strong>变速箱</strong> 8AT</div>
+                                <div class="spec-item"><strong>百公里加速</strong> 8.6秒</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Car 2 -->
+                    <article class="car-card">
+                        <div class="car-image">
+                            <span class="car-badge">四驱</span>
+                            <img src="https://picsum.photos/seed/bmw1xdrive/400/300" alt="宝马X1 xDrive25Li">
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">X1 xDrive25Li 豪华型</h3>
+                            <div class="car-price">指导价: 约 30.29万起</div>
+                            <div class="spec-list">
+                                <div class="spec-item"><strong>动力总成</strong> 2.0T 涡轮增压 (184马力)</div>
+                                <div class="spec-item"><strong>驱动方式</strong> 适时四驱</div>
+                                <div class="spec-item"><strong>变速箱</strong> 8AT</div>
+                                <div class="spec-item"><strong>百公里加速</strong> 8.4秒</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Car 3 -->
+                    <article class="car-card">
+                        <div class="car-image">
+                            <span class="car-badge">顶配</span>
+                            <img src="https://picsum.photos/seed/bmw1xdrive/400/300" alt="宝马X1 xDrive25Li 尊享型">
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">X1 xDrive25Li 尊享型</h3>
+                            <div class="car-price">指导价: 约 32.89万起</div>
+                            <div class="spec-list">
+                                <div class="spec-item"><strong>动力总成</strong> 2.0T 涡轮增压 (184马力)</div>
+                                <div class="spec-item"><strong>驱动方式</strong> 适时四驱</div>
+                                <div class="spec-item"><strong>变速箱</strong> 8AT</div>
+                                <div class="spec-item"><strong>特色配置</strong> 360全景影像、哈曼卡顿音响</div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>国产X1核心优势</h2>
+                    <p>基于CLAR平台打造，在空间、动力与科技配置上全面升级。</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🚗</div>
+                        <h3>越级后排空间</h3>
+                        <p>国产版轴距加长至2802mm，后排腿部空间宽敞，后排座椅支持靠背调节，提升了家用实用性。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>全新B48动力</h3>
+                        <p>搭载B48TU 2.0T涡轮增压发动机，匹配采埃孚8AT变速箱，动力响应迅速，油耗表现优于上一代。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3>科技座舱升级</h3>
+                        <p>引入iDrive 8.5系统，支持无线CarPlay/CarLife，双联屏设计，UI交互更加直观流畅。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>安全配置</h3>
+                        <p>标配主动刹车、车道保持、盲点监测等驾驶辅助系统，为城市驾驶提供全方位安全保障。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="section">
+            <div class="container">
+                <div class="guide-container">
+                    <div class="guide-content">
+                        <h3>购车建议与注意事项</h3>
+                        <p><strong>1. 驱动形式选择：</strong> 如果您所在地区冬季降雪较多或经常行驶在非铺装路面，建议选择 <strong>xDrive</strong> 四驱版本，其脱困能力和稳定性明显优于前驱的 <strong>sDrive</strong> 版本。</p>
+                        <p><strong>2. 动力选择：</strong> 25Li版本（184马力）已经完全满足日常城市通勤需求，动力储备充足。若对超车信心有更高要求，可关注后续可能的M35i xDrive版本（若有国产）。</p>
+                        <p><strong>3. 内饰细节：</strong> 国产版内饰用料有所提升，但塑料感依然存在。建议在试驾时重点体验后排座椅的舒适度以及后备箱在放倒后排后的扩展空间。</p>
+                        <p><strong>4. 购车时机：</strong> 宝马通常在年底或车展期间会有较大幅度的优惠，建议多关注当地经销商的促销活动。</p>
+                    </div>
+                    <aside class="guide-sidebar">
+                        <h4>选购清单</h4>
+                        <ul class="checklist">
+                            <li>确认预算范围（含保险购置税）</li>
+                            <li>确定是否需要四驱系统</li>
+                            <li>检查车漆面及轮胎磨损情况</li>
+                            <li>测试导航与互联驾驶功能</li>
+                            <li>确认售后保养政策</li>
+                        </ul>
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: #fff3cd; border-radius: 4px; font-size: 0.9rem; color: #856404;">
+                            <strong>提示：</strong> 国产X1目前主要提供2.0T低功率版本，高功率M35i版本尚未国产，进口渠道购买价格较高。
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于国产bmwx1的疑问，这里都有答案。</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item active">
+                        <div class="faq-question">国产X1与进口X1有什么区别？ <span>+</span></div>
+                        <div class="faq-answer">国产版X1基于CLAR平台打造，轴距加长，配置上更侧重性价比，价格亲民。进口版X1通常指美规或加规车型，配置更高，且可能提供不同排量的动力选择。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">国产X1的油耗表现如何？ <span>+</span></div>
+                        <div class="faq-answer">根据工信部综合工况，X1的油耗约为6.5-7.2L/100km。实际驾驶中，城市拥堵路况下油耗可能达到9-10L，高速行驶可控制在7L左右。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">后排座椅可以放倒吗？ <span>+</span></div>
+                        <div class="faq-answer">可以。国产X1的后排座椅支持按比例放倒，放倒后可以形成一个平坦的空间，大大增加了后备箱的储物能力，适合装载大件物品。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        专注于为消费者提供真实、客观的汽车测评与购车指南，致力于成为您的购车参谋。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>车型分类</h4>
+                    <ul>
+                        <li><a href="#">宝马X1</a></li>
+                        <li><a href="#">宝马X2</a></li>
+                        <li><a href="#">宝马X3</a></li>
+                        <li><a href="#">宝马X5</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">购车流程</a></li>
+                        <li><a href="#">金融方案</a></li>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 汽车评测网. All Rights Reserved. 本页面仅用于展示HTML静态页面设计。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
